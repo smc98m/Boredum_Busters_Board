@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boredom Buster's Choice Board</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{% static 'script.js' %}"></script>
+</head>
+<body>
+    <div class="choiceBoardHeader">
+        <h1 id="choiceBoard_heading">Welcome to the Boredom Busters Choice Board!</h1>
+        <button class="choiceBoardButton1"><a href="/admin_edits">Back to Edit</a></button> 
+        <button class="choiceBoardButton2"><a href="/logout">Logout</a></button>    
+    </div>
+        <div class="number_table">
+            <table>
+                <tr>
+                    <td><img src="/static/zany_face.gif" alt="zany_face" class="hideblock"></td>
+                    <td><img src="/static/heart_kiss.gif" alt="heart_kiss" class="hideblock"></td>
+                    <td><img src="/static/party_face.gif" alt="party_face" class="hideblock"></td>
+                </tr>
+                <tr>
+                    <td><img src="/static/tears_of_joy.gif" alt="tears_of_joy"></td>
+                    <td><img src="/static/frozen.gif" alt="frozen"></td>
+                    <td><img src="/static/smiling_face_with_hearts.gif" alt="investigative"></td>
+                </tr>
+                <tr>
+                    <td><img src="/static/cowboy_hat_face.gif" alt="cowboy_hat_face"></td>
+                    <td><img src="/static/woozy_face.gif" alt="woozy_face"></td>
+                    <td><img src="/static/mind_blown.gif" alt="mind_blown"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="points_earned_needed">
+        <h1 id="points_earned">Points Earned:</h1><br>
+        <h2>**points go here**</h2>
+        <table id="items">
+            <th><h1>Points Needed:</h1></th>
+            {% for point in my_points %}
+                <tr>
+                    <td>{{point.points}}</td>
+                </tr>
+                {% endfor %}
+        </table>
+        <table>
+            <th><h1>Reward</h1></th>
+        </table>
+    </div>
+</body>
+</html>

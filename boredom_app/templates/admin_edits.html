@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edits Page</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{% static 'script.js' %}"></script>
+</head>
+<body>
+    <div class="admin_edits_container">
+        <h1>Hello {{request.session.user}}! Is your child bored?</h1>
+            
+        <h2>Instructions for parents:</h2>
+        <p>Enter a total of nine activities to fill in the choice board. For each activity entered you will assign a point value to it. When complete with all nine activities and point values, you will then enter the reward for the child. The child earns the reward only after completing all nine activities.</p>
+        
+        <h3>Enter Activities:</h3>
+        <div class="enter_activities_buttons">
+            <button><a href="/logout">Logout</a></button> 
+            <button><a href="/choiceBoard">View the Board</a></button>
+        </div>
+        <p>Enter 9 activities for the Choice Board.</p>
+        <form action="/createActivity/{{user.id}}" method="POST">
+            {% csrf_token %}
+            <p>Add activity:<input type="text" name="item"></p>
+            <p>Point value of activity:<input type="number" name="points"></p>
+            <input type="submit" value="Submit">
+        </form>
+        <table id="items">
+            <th>Activity</th>
+            <th>Points</th>
+            <th>Delete Item</th>
+            {% for item in my_items %}
+                <tr>
+                    <td>{{item.item}}</td>
+                    <td>{{item.points}}</td>
+                    <td><a href="/delete/{{item.id}}">Delete</a></td>
+                </tr>
+                {% endfor %}
+        </table>
+        
+        <h3>After adding all activities and points, enter the reward last.</h3>
+        <form action="/createReward/{{user.id}}" method="POST">
+            {% csrf_token %}
+            <p>Enter reward:<input type="text" name="reward"></p>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
