@@ -42,29 +42,26 @@ def logout(request):
 
 # Commands made by the admin (the parents)...
 
-
 def choiceBoard(request):
-    points = Activity.objects.get(id=request.session['id'])
-    my_points = retrieve_points(request.session['id'])
+    user = User.objects.get(id=request.session['id'])
+    activities = Activity.objects.filter(user=user)
+    sum = 0
+    for activity in activities:
+        sum = sum + activity.points
+    my_reward = user.reward
     context = {
-        'my_points': my_points,
+        'sum': sum,
+        'my_reward': my_reward
     }
     return render(request, 'choiceBoard.html', context)
 
-def retrieve_points(id):
-    print(id)
-    my_points = Activity.objects.filter(user=User.objects.get(id=id))
-    sum = 0
-    for i in range(1,5):
-        sum += i
-    print(sum)
-    return my_points
-
 def admin_edits(request):
     user = User.objects.get(id=request.session['id'])
-    my_items = retrieve_items(request.session['id'])
+    my_activities = Activity.objects.filter(user=user)
+    my_reward = user.reward
     context = {
-        'my_items': my_items,
+        'my_activities': my_activities,
+        'my_reward': my_reward,
         'user': user
     }
     return render(request, 'admin_edits.html', context)
@@ -73,19 +70,14 @@ def createActivity(request, id):
     new_item = Activity.objects.create(item=request.POST['item'], points=request.POST['points'], user=User.objects.get(id=id))
     return redirect('/admin_edits')
 
-def retrieve_items(id):
-    my_items = Activity.objects.filter(user=User.objects.get(id=id))
-    return my_items
-
 def createReward(request, id):
     print(id)
-    new_reward = Activity.objects.create(reward=request.POST['reward'], user=User.objects.get(id=id))
+    new_reward = User.objects.get(id=id)
+    new_reward.reward = request.POST['reward']
+    new_reward.save()
     return redirect('/admin_edits')
 
 def delete(request, id):
     item = Activity.objects.get(id=id)
     item.delete()
     return redirect('/admin_edits')
-
-def numbers(request):
-    pass

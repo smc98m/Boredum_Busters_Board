@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="admin_edits_container">
-        <h1>Hello {{request.session.user}}! Is your child bored?</h1>
+        <h1 id="Hello_tag">Hello {{request.session.user}}! Is your child bored?</h1>
             
         <h2>Instructions for parents:</h2>
         <p>Enter a total of nine activities to fill in the choice board. For each activity entered you will assign a point value to it. When complete with all nine activities and point values, you will then enter the reward for the child. The child earns the reward only after completing all nine activities.</p>
@@ -32,10 +32,10 @@
             <th>Activity</th>
             <th>Points</th>
             <th>Delete Item</th>
-            {% for item in my_items %}
+            {% for activity in my_activities %}
                 <tr>
-                    <td>{{item.item}}</td>
-                    <td>{{item.points}}</td>
+                    <td>{{activity.item}}</td>
+                    <td>{{activity.points}}</td>
                     <td><a href="/delete/{{item.id}}">Delete</a></td>
                 </tr>
                 {% endfor %}
@@ -47,6 +47,7 @@
             <p>Enter reward:<input type="text" name="reward"></p>
             <input type="submit" value="Submit">
         </form>
+        <p>{{my_reward}}</p>
     </div>
 </body>
 </html>

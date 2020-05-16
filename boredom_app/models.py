@@ -26,6 +26,7 @@ class User(models.Model):
     name = models.CharField(max_length=255)
     email = models.CharField(max_length=255)
     password = models.CharField(max_length=255)
+    reward = models.CharField(max_length=255)
     created_at = models.DateField(auto_now_add=True)
     updated_at = models.DateField(auto_now=True)
     objects = UserManager()
@@ -33,7 +34,6 @@ class User(models.Model):
 class Activity(models.Model):
     item = models.CharField(max_length=255)
     points = models.PositiveIntegerField(validators=[MaxValueValidator(999)])
-    reward = models.CharField(max_length=255)
     user = models.ForeignKey(User, related_name="activities", on_delete = models.CASCADE)
     created_at = models.DateField(auto_now_add=True)
     updated_at = models.DateField(auto_now=True)

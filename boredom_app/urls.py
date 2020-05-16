@@ -12,5 +12,4 @@ urlpatterns = [
     path('createReward/<int:id>', views.createReward),
     path('delete/<int:id>', views.delete),
     path('logout', views.logout),
-    path('numbers', views.numbers),
 ]
