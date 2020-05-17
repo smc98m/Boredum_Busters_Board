@@ -1,5 +1,5 @@
-// $(document).ready(function(){
-//     $('img').click(function(){
-//         $(this).addClass('.hideBlock');
-//     });
-// });
+$(document).ready(function(){
+    $('button').click(function(){
+        $(this).addClass('.hideBlock');
+    });
+});

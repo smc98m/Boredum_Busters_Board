@@ -113,30 +113,41 @@ button[type=submit]:hover {
     transition-duration: 0.4s;
 }
 
-#points_earned {
+.points_headings {
     display: inline-block;
     vertical-align: top;
 }
 
-#points_needed {
-    display: inline-block;
-    vertical-align: top;
-}
-
-.number_table {
+.choice_board {
+    width: 760px;
+    height: 760px;
     font-size: x-large;
     display: inline-block;
 }
 
-    .number_table tr td {
+    .choice_board tr td {
+        width: 247px;
+        height: 247px;
         border-style: solid;
         border-width: 3px;
         border-color: navy;
     }
 
-    .number_table img {
+    .choice_board img {
         image-rendering: 50px;
     } 
+
+#activityOnChoiceBoard {
+    text-align: center;
+}
+
+#pointsOnChoiceBoard {
+    text-align: center;
+}
+
+#buttonOnChoiceBoard {
+    text-align: center;
+}
 
 /* .hideBlock {
     visibility: hidden;

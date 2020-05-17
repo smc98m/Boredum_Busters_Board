@@ -45,13 +45,15 @@ def logout(request):
 def choiceBoard(request):
     user = User.objects.get(id=request.session['id'])
     activities = Activity.objects.filter(user=user)
-    sum = 0
+    request.session['sum'] = 0
+    if 'points_earned' not in request.session:
+        request.session['points_earned'] = 0
     for activity in activities:
-        sum = sum + activity.points
+        request.session['sum'] = request.session['sum'] + activity.points
     my_reward = user.reward
     context = {
-        'sum': sum,
-        'my_reward': my_reward
+        'my_reward': my_reward,
+        'activities': activities,
     }
     return render(request, 'choiceBoard.html', context)
 
@@ -78,6 +80,12 @@ def createReward(request, id):
     return redirect('/admin_edits')
 
 def delete(request, id):
-    item = Activity.objects.get(id=id)
-    item.delete()
+    activity = Activity.objects.get(id=id)
+    activity.delete()
     return redirect('/admin_edits')
+
+def completed_activity(request, id):
+    activity = Activity.objects.get(id=id)
+    add_points = activity.points
+    request.session['points_earned'] = request.session['points_earned'] + activity.points
+    return redirect('/choiceBoard')

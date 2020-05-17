@@ -15,33 +15,49 @@
         <button class="choiceBoardButton1"><a href="/admin_edits">Back to Edit</a></button> 
         <button class="choiceBoardButton2"><a href="/logout">Logout</a></button>    
     </div>
-        <div class="number_table">
-            <table>
-                <tr>
-                    <td><img src="/static/zany_face.gif" alt="zany_face" class="hideBlock"></td>
-                    <td><img src="/static/heart_kiss.gif" alt="heart_kiss" class="hideBlock"></td>
-                    <td><img src="/static/party_face.gif" alt="party_face" class="hideBlock"></td>
-                </tr>
-                <tr>
-                    <td><img src="/static/tears_of_joy.gif" alt="tears_of_joy"></td>
-                    <td><img src="/static/frozen.gif" alt="frozen"></td>
-                    <td><img src="/static/smiling_face_with_hearts.gif" alt="investigative"></td>
-                </tr>
-                <tr>
-                    <td><img src="/static/cowboy_hat_face.gif" alt="cowboy_hat_face"></td>
-                    <td><img src="/static/woozy_face.gif" alt="woozy_face"></td>
-                    <td><img src="/static/mind_blown.gif" alt="mind_blown"></td>
-                </tr>
-            </table>
-        </div>
+    <div class="choice_board">
+        <table>
+            <tr>
+            {% for activity in activities %}
+            
+            <td id="{{forloop.counter}}">
+            <p id="activityOnChoiceBoard">{{activity.item}}</p>
+            <p id="pointsOnChoiceBoard">{{activity.points}} points</p>
+            <p id="buttonOnChoiceBoard"><button><a href="/completed_activity/{{activity.id}}">Complete</a></button></p>
+            {% cycle '' '' '</td></tr><tr>' %}
+            {% endfor %}
+            </tr>
+        </table>
     </div>
     <div class="points_earned_needed">
-        <h1 id="points_earned">Points Earned:</h1><br>
-        <h1>Points Needed:</h1>
-        <h2>{{sum}}</h2>
+        <h1 class="points_headings">Points Earned:</h1><br>
+        <h2>{{request.session.points_earned}}</h2>
+        <h1 class="points_headings">Points Needed:</h1>
+        <h2>{{request.session.sum}}</h2>
 
-        <h1>Reward</h1>
+        <h1>Reward:</h1>
         <h2>{{my_reward}}</h2>
     </div>
 </body>
 </html>
+
+
+<!-- <div class="number_table">
+    <table>
+        <tr>
+            <td><img src="/static/zany_face.gif" alt="zany_face"></td>
+            <td><img src="/static/heart_kiss.gif" alt="heart_kiss"></td>
+            <td><img src="/static/party_face.gif" alt="party_face"></td>
+        </tr>
+        <tr>
+            <td><img src="/static/tears_of_joy.gif" alt="tears_of_joy"></td>
+            <td><img src="/static/frozen.gif" alt="frozen"></td>
+            <td><img src="/static/smiling_face_with_hearts.gif" alt="investigative"></td>
+        </tr>
+        <tr>
+            <td><img src="/static/cowboy_hat_face.gif" alt="cowboy_hat_face"></td>
+            <td><img src="/static/woozy_face.gif" alt="woozy_face"></td>
+            <td><img src="/static/mind_blown.gif" alt="mind_blown"></td>
+        </tr>
+    </table>
+</div> -->
