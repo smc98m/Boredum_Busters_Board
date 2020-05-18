@@ -4,29 +4,37 @@
 
 /* CSS below this line appear on the index.html page */
 
-.login_container {
+body {
+    font-family: 'Trebuchet MS';
+    background-color: lightgray;
+    padding: 30px 30px;
+}
+
+.login_reg_container {
     text-align: center;
     border-radius: 15px;
-    margin-top: 50px;
-    margin-left: 510px;
+    margin: 50px 373.5px 50px 373.5px;
     margin-bottom: 50px;
     max-width: 500px;
     padding-top: 25px;
-    background-color: #FF8C00;
+    padding-bottom: 25px;
+    background-color: #FA4616;
 }
 
-#login_heading {
+.login_reg_heading {
     font-family: 'Trebuchet MS';
     padding-top: 50px;
     text-align: center;
 }
 
-    h4 {
-        font-family: 'Trebuchet MS';
-        padding-bottom: 50px;
-    }
+h4 {
+    font-family: 'Trebuchet MS';
+    padding-bottom: 50px;
+}
 
-#login_input_text {
+/* CSS below this line appear on the register_user.html page */
+
+#login_reg_text {
     width: 60%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -47,7 +55,7 @@ button[type=submit] {
 }
 
 button[type=submit]:hover {
-    background-color: navy;
+    background-color: #0021A5;
 }
 
 /* CSS below this line appear on the admin_edits.html page */
@@ -55,19 +63,131 @@ button[type=submit]:hover {
 .admin_edits_container {
     height: 900px;
     width: 900px;
-    /* background-image: url(https://webstockreview.net/images/electric-clipart-monopoly-chance.png); */
     background-repeat: no-repeat;
 }
 
-    h1 {
-        padding-bottom: 10px;
+#admin_edits_header {
+    padding-left: 25px;
+    display: inline-block;
+}
+
+.instructions_h2_p {
+    margin-left: 25px;
+    background-color: #FA4616;
+    padding: 5px;
+    color: white;
+    border-radius: 15px;
+}
+
+#admin_edits_logout_button {
+    margin-left: 265px;
+    margin-bottom: 5px;
+    background-color: #0021A5;
+    border-radius: 15px;
+    color: white;
+    padding: 8px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.activities_form {
+    display: inline-block;
+    text-align: center;
+    color: white;
+    border-radius: 15px;
+    margin: 0px 0px 0px 25px;
+    width: 375px;
+    padding: 50px 35px 50px 35px;
+    background-color: #0021A5;
+}
+
+.activities_form input {
+    background-color: white;
+    border-radius: 5px;
+    color: #FA4616;
+    padding: 8px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#admin_edits_board_button {
+    margin-left: 120px;
+    margin-top: 10px;
+    background-color: #0021A5;
+    border-radius: 15px;
+    border-color: black 2px solid;
+    color: white;
+    padding: 8px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.table_activities_div {
+    display: inline-block;
+    border-radius: 15px;
+    margin: 25px 0px 0px 0px;
+    width: 400px;
+    padding: 0px 0px 25px 25px;
+}
+
+#table_activities {
+    vertical-align: top;
+    display: inline-block;
+    border-collapse: collapse;
+    width: 400px;
+}
+
+    th, tr {
+        padding: 13px 8px 8px 8px;
+        text-align: left;
+        border-bottom: 1px solid rgb(235, 233, 233);
     }
+
+    td:hover {
+        background-color: #FA4616;
+        color: white;
+    }
+
+
+.enter_reward_section {
+    width: 870px;
+    margin-left: 25px;
+    margin-top: 10px;
+    background-color: #FA4616;
+    border-radius: 15px;
+    border-color: black;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.enter_reward_section input {
+    width: 60%;
+    text-align: center;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
 
 /* CSS below this line appear on the choiceBoard.html page */
 
 .choiceBoardHeader {
     padding-top: 10px;
-    background-color: navy;
+    background-color: #0021A5;
     color: white;
 }
 
@@ -78,39 +198,28 @@ button[type=submit]:hover {
     font-family: 'Trebuchet MS';
 }
 
-.points_earned_needed {
-    display: inline-block;
-    vertical-align: top;
-    margin-left: 150px;
-    color: navy;
-}
-
-.choiceBoardButton1 {
+#choiceBoardButton1 {
     background-color: white;
     border-radius: 5px;
-    border-color: black;
-    color: white;
+    color: #FA4616;
     padding: 8px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
     cursor: pointer;
-    transition-duration: 0.4s;    
 }
 
-.choiceBoardButton2 {
+#choiceBoardButton2 {
     background-color: white;
     border-radius: 5px;
-    border-color: black;
-    color: white;
+    color: #FA4616;
     padding: 8px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
     cursor: pointer;
-    transition-duration: 0.4s;
 }
 
 .points_headings {
@@ -130,7 +239,7 @@ button[type=submit]:hover {
         height: 247px;
         border-style: solid;
         border-width: 3px;
-        border-color: navy;
+        border-color: #0021A5;
     }
 
     .choice_board img {
@@ -146,13 +255,36 @@ button[type=submit]:hover {
 }
 
 #buttonOnChoiceBoard {
+    margin-left: 77px;
+    margin-top: 10px;
+    background-color: #0021A5;
+    border-radius: 15px;
+    border-color: black 2px solid;
+    color: white;
+    padding: 8px 8px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.points_earned_needed {
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    margin-left: 150px;
+    color: #0021A5;
+}
+
+.points_headings {
     text-align: center;
 }
 
-/* .hideBlock {
-    visibility: hidden;
-} */
+.point_values {
+    color: #FA4616;
+    text-align: center;
+}
 
-.text_for_each_square {
-    visibility: hidden;
+#reward_description {
+    color: #FA4616;
 }

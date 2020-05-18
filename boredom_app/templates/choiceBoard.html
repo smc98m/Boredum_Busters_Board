@@ -12,8 +12,8 @@
 <body>
     <div class="choiceBoardHeader">
         <h1 id="choiceBoard_heading">Welcome to the Boredom Busters Choice Board!</h1>
-        <button class="choiceBoardButton1"><a href="/admin_edits">Back to Edit</a></button> 
-        <button class="choiceBoardButton2"><a href="/logout">Logout</a></button>    
+        <a id="choiceBoardButton1" href="/admin_edits">Back to Edit</a>
+        <a id="choiceBoardButton2" href="/logout">Logout</a>
     </div>
     <div class="choice_board">
         <table>
@@ -23,7 +23,7 @@
             <td id="{{forloop.counter}}">
             <p id="activityOnChoiceBoard">{{activity.item}}</p>
             <p id="pointsOnChoiceBoard">{{activity.points}} points</p>
-            <p id="buttonOnChoiceBoard"><button><a href="/completed_activity/{{activity.id}}">Complete</a></button></p>
+            <a id="buttonOnChoiceBoard" href="/completed_activity/{{activity.id}}">Complete</a>
             {% cycle '' '' '</td></tr><tr>' %}
             {% endfor %}
             </tr>
@@ -31,16 +31,15 @@
     </div>
     <div class="points_earned_needed">
         <h1 class="points_headings">Points Earned:</h1><br>
-        <h2>{{request.session.points_earned}}</h2>
+        <h2 class="point_values">{{request.session.points_earned}}</h2>
         <h1 class="points_headings">Points Needed:</h1>
-        <h2>{{request.session.sum}}</h2>
+        <h2 class="point_values">{{request.session.sum}}</h2>
 
-        <h1>Reward:</h1>
-        <h2>{{my_reward}}</h2>
+        <h1 class="points_headings">Reward:</h1>
+        <h2 id="reward_description">{{my_reward}}</h2>
     </div>
 </body>
 </html>
-
 
 <!-- <div class="number_table">
     <table>

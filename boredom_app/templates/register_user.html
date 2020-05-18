@@ -10,14 +10,16 @@
     <script src="{% static 'script.js' %}"></script>
 </head>
 <body>
-    <h1>Register</h1>
-    <form action="/register" method="POST">
-        {% csrf_token %}
-        <p><input type="text" name="name" placeholder="Name"></p>
-        <p><input type="text" name="email" placeholder="Email"></p>
-        <p><input type="password" name="password" placeholder="Password"></p>
-        <p><input type="password" name="confpw" placeholder="Confirm Password"></p>
-        <input type="submit" value="Register">
-    </form>
+    <div class="login_reg_container">
+        <h1 class="login_reg_heading">Register as a new user!</h1>
+        <form action="/register" method="POST">
+            {% csrf_token %}
+            <p><input id="login_reg_text" type="text" name="name" placeholder="Name"></p>
+            <p><input id="login_reg_text" type="text" name="email" placeholder="Email"></p>
+            <p><input id="login_reg_text" type="password" name="password" placeholder="Password"></p>
+            <p><input id="login_reg_text" type="password" name="confpw" placeholder="Confirm Password"></p>
+            <button id="login_reg_button" type="submit">Register</button>
+        </form>
+    </div>
 </body>
 </html>

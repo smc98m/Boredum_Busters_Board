@@ -11,43 +11,45 @@
 </head>
 <body>
     <div class="admin_edits_container">
-        <h1 id="Hello_tag">Hello {{request.session.user}}! Is your child bored?</h1>
-            
-        <h2>Instructions for parents:</h2>
-        <p>Enter a total of nine activities to fill in the choice board. For each activity entered you will assign a point value to it. When complete with all nine activities and point values, you will then enter the reward for the child. The child earns the reward only after completing all nine activities.</p>
-        
-        <h3>Enter Activities:</h3>
-        <div class="enter_activities_buttons">
-            <button><a href="/logout">Logout</a></button> 
-            <button><a href="/choiceBoard">View the Board</a></button>
+        <h1 id="admin_edits_header">Hello {{request.session.user}}! Is your child bored?</h1>
+        <a id="admin_edits_logout_button" href="/logout">Logout</a>
+        <div class="instructions_h2_p">
+            <h2>Instructions for parents:</h2>
+            <p>Enter a total of nine (9) activities to fill in the choice board. For each activity entered you will assign a point value to it. When complete with all nine activities and point values, you will then enter the reward for the child. The child earns the reward only after completing all nine activities.</p>
         </div>
-        <p>Enter 9 activities for the Choice Board.</p>
-        <form action="/createActivity/{{user.id}}" method="POST">
-            {% csrf_token %}
-            <p>Add activity:<input type="text" name="item"></p>
-            <p>Point value of activity:<input type="number" name="points"></p>
-            <input type="submit" value="Submit">
-        </form>
-        <table id="items">
-            <th>Activity</th>
-            <th>Points</th>
-            <th>Delete Item</th>
-            {% for activity in my_activities %}
-                <tr>
-                    <td>{{activity.item}}</td>
-                    <td>{{activity.points}}</td>
-                    <td><a href="/delete/{{activity.id}}">Delete</a></td>
-                </tr>
-                {% endfor %}
-        </table>
-        
-        <h3>After adding all activities and points, enter the reward last.</h3>
-        <form action="/createReward/{{user.id}}" method="POST">
-            {% csrf_token %}
-            <p>Enter reward:<input type="text" name="reward"></p>
-            <input type="submit" value="Submit">
-        </form>
-        <p>{{my_reward}}</p>
+        <div class="activities_form">
+            <h3>Enter 9 activities for the Choice Board</h3>
+            <form action="/createActivity/{{user.id}}" method="POST">
+                {% csrf_token %}
+                <p><input id="login_reg_text" type="text" name="item" placeholder="Add activity"></p>
+                <p><input id="login_reg_text" type="number" name="points" placeholder="Add point value"></p>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        <div class="table_activities_div">
+            <table id="table_activities">
+                <th>Activity</th>
+                <th>Points</th>
+                <th>Delete Item</th>
+                {% for activity in my_activities %}
+                    <tr>
+                        <td>{{activity.item}}</td>
+                        <td>{{activity.points}}</td>
+                        <td><a href="/delete/{{activity.id}}">Delete</a></td>
+                    </tr>
+                    {% endfor %}
+            </table>
+            <a id="admin_edits_board_button" href="/choiceBoard">View the Board</a>
+        </div>
+        <div class="enter_reward_section">
+            <h3>After adding the activities and points, enter the reward:</h3>
+            <form action="/createReward/{{user.id}}" method="POST">
+                {% csrf_token %}
+                <p><input type="text" name="reward" placeholder="Enter Reward"></p>
+                <input type="submit" value="Submit">
+            </form>
+            <p>You entered: {{my_reward}}</p>
+        </div>
     </div>
 </body>
 </html>
