@@ -9,18 +9,23 @@
     <link rel="stylesheet" href="{% static 'style.css' %}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="{% static 'script.js' %}"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
 </head>
-<body>
-    <h1 class="login_reg_heading">Boredom Busters!</h1>
+
+<body id="login_page">
+    <h1 id="login_reg_heading">Boredom Busters!</h1>
+    <h3><a href="/choiceBoard">Just exploring? Click here without registering</a></h3>
     <div class="login_reg_container">
         <h1>Parent Login</h1>
         <form action="/login" method="POST">
             {% csrf_token %}
-                <p><input id="login_reg_text" type="text" name="email" placeholder="Email"></p>
-                <p><input id="login_reg_text" type="password" name="password" placeholder="Password"></p>
+            <p><input id="login_reg_text" type="text" name="email" placeholder="Email"></p>
+            <p><input id="login_reg_text" type="password" name="password" placeholder="Password"></p>
             <button id="login_button" type="submit">Login</button>
         </form>
-        <h4>Don't have an account? <a href="/register_user">Register</a></h4>
+        <h5>Don't have an account? <a href="/register_user">Register</a></h5>
     </div>
 </body>
+
 </html>

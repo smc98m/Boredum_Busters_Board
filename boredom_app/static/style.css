@@ -4,38 +4,43 @@
 
 /* CSS below this line appear on the index.html page */
 
-body {
-    font-family: 'Trebuchet MS';
-    background-color: lightgray;
-    padding: 30px 30px;
+#login_page {
+    background-image: url(https://cdn1.vectorstock.com/i/1000x1000/85/40/set-of-four-aces-deck-of-cards-vector-20058540.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#login_page h3 {
+    font-family: 'Patrick Hand', cursive;
+    text-align: center;
 }
 
 .login_reg_container {
+    font-family: 'Patrick Hand', cursive;
     text-align: center;
     border-radius: 15px;
-    margin: 50px 373.5px 50px 373.5px;
-    margin-bottom: 50px;
-    max-width: 500px;
-    padding-top: 25px;
-    padding-bottom: 25px;
-    background-color: #FA4616;
+    margin: 50px 450px 50px 450px;
+    /* max-width: 500px; */
+    opacity: 1;
+    background-color: rgba(235, 233, 233, 0.527);
 }
 
-.login_reg_heading {
-    font-family: 'Trebuchet MS';
-    padding-top: 50px;
-    text-align: center;
-}
+    #login_reg_heading {
+        font-family: 'Patrick Hand', cursive;
+        font-size: 100px;
+        text-align: center;
+        margin-bottom: 5px;
+    }
 
-h4 {
-    font-family: 'Trebuchet MS';
-    padding-bottom: 50px;
-}
+    h5 {
+        font-family: 'Patrick Hand', cursive;
+        padding-bottom: 50px;
+    }
 
 /* CSS below this line appear on the register_user.html page */
 
 #login_reg_text {
-    width: 60%;
+    width: 40%;
     padding: 12px 20px;
     margin: 8px 0;
     border: 1px solid #ccc;
@@ -44,7 +49,7 @@ h4 {
 }
 
 button[type=submit] {
-    width: 60%;
+    width: 40%;
     background-color: royalblue;
     color: white;
     padding: 14px 20px;
@@ -64,6 +69,7 @@ button[type=submit]:hover {
     height: 900px;
     width: 900px;
     background-repeat: no-repeat;
+    margin: auto;
 }
 
 #admin_edits_header {
@@ -185,7 +191,12 @@ button[type=submit]:hover {
 
 /* CSS below this line appear on the choiceBoard.html page */
 
+#choiceboard_container {
+    margin: auto;
+}
+
 .choiceBoardHeader {
+    width: 1185px;
     padding-top: 10px;
     background-color: #0021A5;
     color: white;
@@ -254,7 +265,7 @@ button[type=submit]:hover {
     text-align: center;
 }
 
-#buttonOnChoiceBoard {
+.buttonOnChoiceBoard {
     margin-left: 77px;
     margin-top: 10px;
     background-color: #0021A5;
@@ -272,7 +283,7 @@ button[type=submit]:hover {
     display: inline-block;
     text-align: center;
     vertical-align: top;
-    margin-left: 150px;
+    margin-left: 100px;
     color: #0021A5;
 }
 
@@ -287,4 +298,5 @@ button[type=submit]:hover {
 
 #reward_description {
     color: #FA4616;
+    max-width: 250px;
 }

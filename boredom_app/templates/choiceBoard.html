@@ -10,33 +10,35 @@
     <script src="{% static 'script.js' %}"></script>
 </head>
 <body>
-    <div class="choiceBoardHeader">
-        <h1 id="choiceBoard_heading">Welcome to the Boredom Busters Choice Board!</h1>
-        <a id="choiceBoardButton1" href="/admin_edits">Back to Edit</a>
-        <a id="choiceBoardButton2" href="/logout">Logout</a>
-    </div>
-    <div class="choice_board">
-        <table>
-            <tr>
-            {% for activity in activities %}
-            
-            <td id="{{forloop.counter}}">
-            <p id="activityOnChoiceBoard">{{activity.item}}</p>
-            <p id="pointsOnChoiceBoard">{{activity.points}} points</p>
-            <a id="buttonOnChoiceBoard" href="/completed_activity/{{activity.id}}">Complete</a>
-            {% cycle '' '' '</td></tr><tr>' %}
-            {% endfor %}
-            </tr>
-        </table>
-    </div>
-    <div class="points_earned_needed">
-        <h1 class="points_headings">Points Earned:</h1><br>
-        <h2 class="point_values">{{request.session.points_earned}}</h2>
-        <h1 class="points_headings">Points Needed:</h1>
-        <h2 class="point_values">{{request.session.sum}}</h2>
+    <div id="choiceboard_container">
+        <div class="choiceBoardHeader">
+            <h1 id="choiceBoard_heading">Welcome to the Boredom Busters Choice Board!</h1>
+            <a id="choiceBoardButton1" href="/admin_edits">Back to Edit</a>
+            <a id="choiceBoardButton2" href="/logout">Logout</a>
+        </div>
+        <div class="choice_board">
+            <table>
+                <tr>
+                {% for activity in activities %}
+                
+                <td id="{{forloop.counter}}">
+                <p id="activityOnChoiceBoard">{{activity.item}}</p>
+                <p id="pointsOnChoiceBoard">{{activity.points}} points</p>
+                <a class="buttonOnChoiceBoard" href="/completed_activity/{{activity.id}}">Complete</a>
+                {% cycle '' '' '</td></tr><tr>' %}
+                {% endfor %}
+                </tr>
+            </table>
+        </div>
+        <div class="points_earned_needed">
+            <h1 class="points_headings">Points Earned:</h1><br>
+            <h2 class="point_values">{{request.session.points_earned}}</h2>
+            <h1 class="points_headings">Points Needed:</h1>
+            <h2 class="point_values">{{request.session.sum}}</h2>
 
-        <h1 class="points_headings">Reward:</h1>
-        <h2 id="reward_description">{{my_reward}}</h2>
+            <h1 class="points_headings">Reward:</h1>
+            <h2 id="reward_description">{{my_reward}}</h2>
+        </div>
     </div>
 </body>
 </html>

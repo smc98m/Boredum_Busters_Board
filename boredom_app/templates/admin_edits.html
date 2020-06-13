@@ -9,7 +9,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="{% static 'script.js' %}"></script>
 </head>
-<body>
+<body id="admin_edits_page">
     <div class="admin_edits_container">
         <h1 id="admin_edits_header">Hello {{request.session.user}}! Is your child bored?</h1>
         <a id="admin_edits_logout_button" href="/logout">Logout</a>
