@@ -66,29 +66,29 @@ button[type=submit]:hover {
 /* CSS below this line appear on the admin_edits.html page */
 
 .admin_edits_container {
-    height: 900px;
-    width: 900px;
+    background-image: url(https://www.publicdomainpictures.net/pictures/170000/velka/chess-pieces-1463642616t89.jpg);
     background-repeat: no-repeat;
+    background-size: cover;
+    height: 900px;
+    width: 1200px;
     margin: auto;
 }
 
 #admin_edits_header {
-    padding-left: 25px;
+    font-family: 'Patrick Hand', cursive;
     display: inline-block;
 }
 
 .instructions_h2_p {
-    margin-left: 25px;
-    background-color: #FA4616;
-    padding: 5px;
-    color: white;
-    border-radius: 15px;
+    font-family: 'Patrick Hand', cursive;
+    padding-right: 300px;
 }
 
 #admin_edits_logout_button {
+    font-family: 'Patrick Hand', cursive;
     margin-left: 265px;
     margin-bottom: 5px;
-    background-color: #0021A5;
+    background-color: rgb(7, 0, 100);
     border-radius: 15px;
     color: white;
     padding: 8px 32px;
@@ -100,20 +100,19 @@ button[type=submit]:hover {
 }
 
 .activities_form {
+    font-family: 'Patrick Hand', cursive;
     display: inline-block;
     text-align: center;
-    color: white;
-    border-radius: 15px;
-    margin: 0px 0px 0px 25px;
+    margin: 0px 0px 0px 0px;
     width: 375px;
-    padding: 50px 35px 50px 35px;
-    background-color: #0021A5;
+    height: 300px;
+    padding: 25px;
 }
 
 .activities_form input {
+    font-family: 'Patrick Hand', cursive;
     background-color: white;
     border-radius: 5px;
-    color: #FA4616;
     padding: 8px 32px;
     text-align: center;
     text-decoration: none;
@@ -122,10 +121,20 @@ button[type=submit]:hover {
     cursor: pointer;
 }
 
+#add_activity_text {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
 #admin_edits_board_button {
+    font-family: 'Patrick Hand', cursive;
     margin-left: 120px;
     margin-top: 10px;
-    background-color: #0021A5;
+    background-color: rgb(7, 0, 100);
     border-radius: 15px;
     border-color: black 2px solid;
     color: white;
@@ -138,14 +147,16 @@ button[type=submit]:hover {
 }
 
 .table_activities_div {
+    font-family: 'Patrick Hand', cursive;
+    background-color: rgba(235, 233, 233, 0.432);
     display: inline-block;
-    border-radius: 15px;
     margin: 25px 0px 0px 0px;
-    width: 400px;
+    width: 390px;
     padding: 0px 0px 25px 25px;
 }
 
 #table_activities {
+    font-family: 'Patrick Hand', cursive;
     vertical-align: top;
     display: inline-block;
     border-collapse: collapse;
@@ -153,25 +164,24 @@ button[type=submit]:hover {
 }
 
     th, tr {
-        padding: 13px 8px 8px 8px;
+        padding: 13px 8px 8px 0px;
         text-align: left;
         border-bottom: 1px solid rgb(235, 233, 233);
     }
 
     td:hover {
-        background-color: #FA4616;
+        background-color: #777b8886;
         color: white;
     }
 
 
 .enter_reward_section {
+    font-family: 'Patrick Hand', cursive;
     width: 870px;
     margin-left: 25px;
     margin-top: 10px;
-    background-color: #FA4616;
     border-radius: 15px;
     border-color: black;
-    color: white;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -180,7 +190,8 @@ button[type=submit]:hover {
 }
 
 .enter_reward_section input {
-    width: 60%;
+    font-family: 'Patrick Hand', cursive;
+    width: 40%;
     text-align: center;
     padding: 12px 20px;
     margin: 8px 0;
@@ -192,24 +203,28 @@ button[type=submit]:hover {
 /* CSS below this line appear on the choiceBoard.html page */
 
 #choiceboard_container {
+    background-image: url(https://storage.needpix.com/rsynced_images/ice-cream-2360321_1280.jpg);
+    background-repeat: no-repeat;
+    background-size: auto;
     margin: auto;
 }
 
 .choiceBoardHeader {
+    font-family: 'Patrick Hand', cursive;
     width: 1185px;
     padding-top: 10px;
-    background-color: #0021A5;
     color: white;
 }
 
 #choiceBoard_heading  {
+    font-family: 'Patrick Hand', cursive;
     width: 800px;
     display: inline-block;
     text-align: center;
-    font-family: 'Trebuchet MS';
 }
 
 #choiceBoardButton1 {
+    font-family: 'Patrick Hand', cursive;
     background-color: white;
     border-radius: 5px;
     color: #FA4616;
@@ -222,6 +237,7 @@ button[type=submit]:hover {
 }
 
 #choiceBoardButton2 {
+    font-family: 'Patrick Hand', cursive;
     background-color: white;
     border-radius: 5px;
     color: #FA4616;
@@ -234,11 +250,13 @@ button[type=submit]:hover {
 }
 
 .points_headings {
+    font-family: 'Patrick Hand', cursive;
     display: inline-block;
     vertical-align: top;
 }
 
 .choice_board {
+    font-family: 'Patrick Hand', cursive;
     width: 760px;
     height: 760px;
     font-size: x-large;
@@ -258,6 +276,7 @@ button[type=submit]:hover {
     } 
 
 #activityOnChoiceBoard {
+    font-family: 'Patrick Hand', cursive;
     text-align: center;
 }
 
@@ -284,19 +303,22 @@ button[type=submit]:hover {
     text-align: center;
     vertical-align: top;
     margin-left: 100px;
-    color: #0021A5;
 }
 
 .points_headings {
+    margin: auto;
     text-align: center;
 }
 
 .point_values {
-    color: #FA4616;
+    font-family: 'Patrick Hand', cursive;
+    margin: auto;
     text-align: center;
 }
 
 #reward_description {
-    color: #FA4616;
+    font-family: 'Patrick Hand', cursive;
+    background-color: rgba(235, 233, 233, 0.527);
+    margin: auto;
     max-width: 250px;
 }

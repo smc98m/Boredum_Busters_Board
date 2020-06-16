@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{% static 'style.css' %}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="{% static 'script.js' %}"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
 </head>
 <body id="admin_edits_page">
     <div class="admin_edits_container">
@@ -21,8 +22,8 @@
             <h3>Enter 9 activities for the Choice Board</h3>
             <form action="/createActivity/{{user.id}}" method="POST">
                 {% csrf_token %}
-                <p><input id="login_reg_text" type="text" name="item" placeholder="Add activity"></p>
-                <p><input id="login_reg_text" type="number" name="points" placeholder="Add point value"></p>
+                <p><input id="add_activity_text" type="text" name="item" placeholder="Add activity"></p>
+                <p><input id="add_activity_text" type="number" name="points" placeholder="Add point value"></p>
                 <input type="submit" value="Submit">
             </form>
         </div>
