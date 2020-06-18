@@ -203,17 +203,16 @@ button[type=submit]:hover {
 /* CSS below this line appear on the choiceBoard.html page */
 
 #choiceboard_container {
-    background-image: url(https://storage.needpix.com/rsynced_images/ice-cream-2360321_1280.jpg);
+    background-color: rgb(153, 153, 153);
     background-repeat: no-repeat;
-    background-size: auto;
     margin: auto;
+    height: 870px;
 }
 
 .choiceBoardHeader {
     font-family: 'Patrick Hand', cursive;
     width: 1185px;
     padding-top: 10px;
-    color: white;
 }
 
 #choiceBoard_heading  {
@@ -285,7 +284,7 @@ button[type=submit]:hover {
 }
 
 .buttonOnChoiceBoard {
-    margin-left: 77px;
+    margin-left: 60px;
     margin-top: 10px;
     background-color: #0021A5;
     border-radius: 15px;
@@ -312,13 +311,15 @@ button[type=submit]:hover {
 
 .point_values {
     font-family: 'Patrick Hand', cursive;
+    background-color: rgba(235, 233, 233, 0.527);
     margin: auto;
     text-align: center;
+    max-width: 168px;
 }
 
 #reward_description {
     font-family: 'Patrick Hand', cursive;
     background-color: rgba(235, 233, 233, 0.527);
     margin: auto;
-    max-width: 250px;
+    max-width: 168px;
 }

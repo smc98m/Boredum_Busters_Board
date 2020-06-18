@@ -7,8 +7,8 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'style.css' %}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="{% static 'script.js' %}"></script>
     <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+    <script src="{% static 'script.js' %}"></script>
 </head>
 <body>
     <div id="choiceboard_container">
@@ -25,7 +25,7 @@
                 <td id="{{forloop.counter}}">
                 <p id="activityOnChoiceBoard">{{activity.item}}</p>
                 <p id="pointsOnChoiceBoard">{{activity.points}} points</p>
-                <a class="buttonOnChoiceBoard" href="/completed_activity/{{activity.id}}">Complete</a>
+                <a class="buttonOnChoiceBoard" href="/completed_activity/{{activity.id}}">Click to Complete</a>
                 {% cycle '' '' '</td></tr><tr>' %}
                 {% endfor %}
                 </tr>
@@ -43,23 +43,3 @@
     </div>
 </body>
 </html>
-
-<!-- <div class="number_table">
-    <table>
-        <tr>
-            <td><img src="/static/zany_face.gif" alt="zany_face"></td>
-            <td><img src="/static/heart_kiss.gif" alt="heart_kiss"></td>
-            <td><img src="/static/party_face.gif" alt="party_face"></td>
-        </tr>
-        <tr>
-            <td><img src="/static/tears_of_joy.gif" alt="tears_of_joy"></td>
-            <td><img src="/static/frozen.gif" alt="frozen"></td>
-            <td><img src="/static/smiling_face_with_hearts.gif" alt="investigative"></td>
-        </tr>
-        <tr>
-            <td><img src="/static/cowboy_hat_face.gif" alt="cowboy_hat_face"></td>
-            <td><img src="/static/woozy_face.gif" alt="woozy_face"></td>
-            <td><img src="/static/mind_blown.gif" alt="mind_blown"></td>
-        </tr>
-    </table>
-</div> -->
