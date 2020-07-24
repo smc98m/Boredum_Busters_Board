@@ -1,7 +1,7 @@
 # Boredum_Busters_Board
 Coding Dojo Solo Project
 
---- This project is still a work in progress and has not been deployed yet ---
+--- This project is still a work in progress and has not been deployed yet so I'm offering screenshots to see what I've accomplished to date ---
 
 Boredum Busters was created with your child(ren) in mind.  Instead of trying to think of things for your kid(s) to do when they say they are bored, you can now plan ahead and create this boredum busters choice board. The parent chooses a reward, the child completes each one and watches the points add up and once all activities are complete - they earn their reward.
 
