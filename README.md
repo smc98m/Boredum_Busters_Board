@@ -1,4 +1,4 @@
-# Boredum_Busters_Board
+# Boredom_Busters_Board
 Coding Dojo Solo Project
 
 --- This project is still a work in progress and has not been deployed yet so I'm offering screenshots to see what I've accomplished to date ---
